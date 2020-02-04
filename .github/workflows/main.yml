@@ -5,10 +5,11 @@ on:
 jobs:
   # word:
   #   name: Output to Microsoft Word with pandoc
-   pdf:
+  pdf:
     name: Output to PDF with pandoc
     runs-on: ubuntu-18.04
     steps:
+      - run: cwd
       - uses: docker://pandoc/core:2.9
         with:
             args: "./docs/patient-guide.md -o output.pdf -t html"
