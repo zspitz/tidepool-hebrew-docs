@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: docker://pandoc/core:2.9.1.1
       - name: Install wkhtmltopdf
-        run: sudo apt-get install libxml2-utils
+        run: "sudo apt-get install libxml2-utils"
       - uses: wkhtmltopdf
         with:
             args: "-o output.pdf -t html docs/test.md"
