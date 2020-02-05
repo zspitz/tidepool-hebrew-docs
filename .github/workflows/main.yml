@@ -10,8 +10,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
+      - run: sudo apt-get install wkhtmltopdf
       - uses: docker://pandoc/core:2.9.1.1
-      - run: sudo apt-get install libxml2-utils
-      - uses: wkhtmltopdf
         with:
             args: "-o output.pdf -t html docs/test.md"
