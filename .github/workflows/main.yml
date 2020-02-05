@@ -10,6 +10,6 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      - uses: docker://pandoc/core:2.9
+      - uses: docker://pandoc/latex:2.9.1.1
         with:
             args: "-o output.pdf -t html docs/test.md"
