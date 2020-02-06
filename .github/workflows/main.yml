@@ -11,6 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: sudo apt-get update && sudo apt-get install wkhtmltopdf
+      - run: echo $PATH
       - uses: docker://pandoc/core:2.9.1.1
         with:
             args: "--standalone -o output.pdf -t html docs/test.md"
